@@ -17,15 +17,6 @@ const Home = () => {
   // eslint-disable-next-line
   let [color, setColor] = useState("grey");
 
-  // const history = useHistory();
-  useEffect(() => {
-    // After 15 seconds, navigate to the login page
-    const timeout = setTimeout(() => {
-      history.push("/login");
-    }, 7000); // 15000 milliseconds = 15 seconds
-    // Clean up the timeout when the component unmounts
-    return () => clearTimeout(timeout);
-  }, [1]);
   const fetchPopularMovieApi = async () => {
     try {
       const { data } = await axios.get(` 
