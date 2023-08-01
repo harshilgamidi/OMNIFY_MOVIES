@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 import Navbar from "../../components/HomeNav/HomeNav";
 import Myloader from "react-spinners/PuffLoader";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
+  const history = useHistory();
   const [allContent, setAllContent] = useState([]);
   const [popularSeries, setPopularSeries] = useState([]);
   const [topRated, setTopRated] = useState([]);
@@ -16,7 +18,14 @@ const Home = () => {
   let [color, setColor] = useState("grey");
 
   // const history = useHistory();
-
+  useEffect(() => {
+    // After 15 seconds, navigate to the login page
+    const timeout = setTimeout(() => {
+      history.push("/login");
+    }, 7000); // 15000 milliseconds = 15 seconds
+    // Clean up the timeout when the component unmounts
+    return () => clearTimeout(timeout);
+  }, [1]);
   const fetchPopularMovieApi = async () => {
     try {
       const { data } = await axios.get(` 

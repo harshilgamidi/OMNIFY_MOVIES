@@ -11,9 +11,9 @@ const Footer = () => {
             <Heading />
             <div className="footer__details">
               <p>Cinemy Movies and Tv Series</p>
-              <p>Nakuru, Kenya</p>
+              <p>Andhra Pradesh, India</p>
               <p>
-                call Us: <span>(+254) 78728340</span>
+                call Us: <span>(+91) 123456789</span>
               </p>
             </div>
           </div>
@@ -39,7 +39,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
           <div className="col-fot4">
             <h4 className="footer-title">Legal</h4>
             <div className="menu-footer">

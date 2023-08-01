@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./../node_modules/touch-loader/touchLoader";
 import React, { useEffect, useState } from "react";
 import Myloader from "react-spinners/ClipLoader";
-import mySvg from "./images/hbo-max.svg";
+import mySvg from "./images/omnify.webp";
 import RoutesAuth from "./config/Routes/RoutesAuth";
 import NotFound from "./pages/Errors/NotFound";
 

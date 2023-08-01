@@ -1,6 +1,5 @@
 import "./SignIn.css";
 import TextField from "@mui/material/TextField";
-import {Link} from 'react-router-dom';
 import GoogleIcon from "../../images/google.svg";
 import Box from "@mui/material/Box";
 import React, { useState } from "react";
@@ -11,16 +10,13 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AppleIcon from "../../images/apple.ico";
-import { useHistory } from "react-router-dom";
 import cors from 'cors';
-const SignIn = () => {
-  const history = useHistory();
+const Login = () => {
   const [values, setValues] = useState({
     password: "",
     showPassword: false,
     email:"",
     userName:"",
-    signUpSuccess: false,
   });
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -35,7 +31,7 @@ const SignIn = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
-    }).then(()=>console.log("login successfull")).then(()=>history.push("/"))
+    })
       .then((response) => response.json())
       .then((data) => {
         // Handle response from the backend if needed
@@ -45,21 +41,7 @@ const SignIn = () => {
         // Handle error if there's an issue with the request
         console.error('Error:', error);
       });
-
-      const isSuccess = true; // Replace this with your actual signup logic
-
-    if (isSuccess) {
-      // Set the signUpSuccess state to true if the signup is successful
-      setValues((prevValues) => ({
-        ...prevValues,
-        signUpSuccess: true,
-      }));
-    } else {
-      // Handle any specific errors or show a message to the user
-      console.error("Error: Signup failed.");
-    }
   };
-  
   const handleClickShowPassword = () => {
     setValues({
       ...values,
@@ -188,11 +170,10 @@ const SignIn = () => {
                     </FormControl>
                   </div>
                 </Box>
-
                 <div className="new__acc">
                   <button onClick={handleSubmit}>Create An Account</button>
                   <p>
-                    Aready have an Account? <button>Sign in</button>
+                    Aready have an Account? <b>Sign in</b>
                   </p>
                 </div>
               </div>
@@ -204,4 +185,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;

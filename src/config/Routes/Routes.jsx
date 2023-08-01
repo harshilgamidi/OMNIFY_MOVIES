@@ -10,11 +10,12 @@ import CopyWrite from "../../components/CopyWrite__footer/LastFooter";
 import BottomNav from "../../components/MainNavbar/BottomNav";
 
 const Routes = () => {
+
   return (
     <>
       <MainNav />
 
-      <div className="App">
+      <div className="">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/all-movies" component={Movies} />

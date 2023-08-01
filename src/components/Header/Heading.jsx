@@ -1,5 +1,5 @@
 import "./Heading.css";
-import mySvg from "../../images/hbo-max.svg";
+import mySvg from "../../images/omnify.webp";
 
 const Heading = () => {
   return (
